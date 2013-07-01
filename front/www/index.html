@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Think about it.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Moro">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+   
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  </head>
+
+  <body>
+<div class="container-fluid">
+	<h1>Text me!</h1>
+	
+	<hr>
+	
+	<div class="row-fluid">
+		<div id="main-container" class="span12">
+			<form id="form-sms" class="form-horizontal">
+				<div class="control-group">
+					<label class="control-label" for="phone-number">Email</label>
+					<div class="controls">
+						<input type="text" id="phone-number" placeholder="Phone number">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="phone-body">Password</label>
+					<div class="controls">
+						<textarea rows="3" id="phone-body" placeholder="Text message..."></textarea>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<button type="submit" class="btn">Send text!</button>
+					</div>
+				</div>
+			</form>
+
+			<hr />
+			
+			<h3>Pending SMS!</h3>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>id</th>
+						<th>PhoneNo</th>
+						<th>Text</th>
+					</tr>
+				</thead>
+				<tbody id="pending-table">
+				</tbody>
+			</table>
+		</div><!--/span-->
+	</div><!--/row-->
+
+	<hr>
+
+	<footer>
+		<p>Après le fromage... 2013</p>
+	</footer>
+
+	<script type="text/template" id="template-sms">
+		<tr>
+			<td><%- id %></td>
+			<td><%- phoneNo %></td>
+			<td><%- sms %></td>
+		</tr>
+	</script>
+	
+    <script src="js/libs/jquery/jquery-min.js"></script>
+	<script src="js/libs/lodash/lodash.js"></script>
+	<script src="js/main.js"></script>
+  </body>
+</html>

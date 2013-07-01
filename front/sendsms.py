@@ -6,6 +6,11 @@ def usage():
 	print '  -p --phone    the phone number'
 	print '  -s --sms      body message'
 	print '  -c --count    count'
+	print ''
+	print 'Template:'
+	print '  {i}, {index}  current index'
+	print '  {c}, {count}  count'
+	print ''
 	
 def sendSMS(phoneNo, sms, count):
 	print "[%s](x%s) %s" % (phoneNo, count, sms)
@@ -18,7 +23,8 @@ def sendSMS(phoneNo, sms, count):
 	cmd = cmd % (phoneNo, sms, count)
 
 	process = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
-	print process.stdout.read()
+	
+	return True
 	
 def checkPhoneNumber(phoneNo):
 	return len(phoneNo) > 0
